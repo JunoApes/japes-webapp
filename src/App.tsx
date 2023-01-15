@@ -1,24 +1,24 @@
 /* eslint-disable sonarjs/no-small-switch */
-import { ChakraProvider } from "@chakra-ui/react";
-import { BrowserRouter as Router } from "react-router-dom";
-import { wallets as vectisWallets } from "@cosmos-kit/vectis";
-import { wallets as wcv2Wallets } from "@cosmos-kit/walletconnect-v2";
-import { Decimal } from "@cosmjs/math";
-import { GasPrice } from "@cosmjs/stargate";
-import { wallets as cosmostationWallets } from "@cosmos-kit/cosmostation";
-import { wallets as keplrWallets } from "@cosmos-kit/keplr";
-import { wallets as leapWallets } from "@cosmos-kit/leap";
-import type { Chain } from "@chain-registry/types";
-import { assets, chains } from "chain-registry";
-import { MotionConfig } from "framer-motion";
+import { ChakraProvider } from "@chakra-ui/react"
+import { BrowserRouter as Router } from "react-router-dom"
+import { wallets as vectisWallets } from "@cosmos-kit/vectis"
+import { wallets as wcv2Wallets } from "@cosmos-kit/walletconnect-v2"
+import { Decimal } from "@cosmjs/math"
+import { GasPrice } from "@cosmjs/stargate"
+import { wallets as cosmostationWallets } from "@cosmos-kit/cosmostation"
+import { wallets as keplrWallets } from "@cosmos-kit/keplr"
+import { wallets as leapWallets } from "@cosmos-kit/leap"
+import type { Chain } from "@chain-registry/types"
+import { assets, chains } from "chain-registry"
+import { MotionConfig } from "framer-motion"
 
-import Layout from "lib/layout";
-import RouterSetup from "lib/router/RouterSetup";
-import { theme } from "lib/styles/theme";
-import { ChainProvider } from "@cosmos-kit/react";
-import { getModal } from "lib/components/WalletModal";
+import Layout from "components/Layout"
+import RouterSetup from "components/Router/RouterSetup"
+import { theme } from "theme"
+import { ChainProvider } from "@cosmos-kit/react"
+import { getModal } from "components/WalletModal"
 
-import "react-toastify/dist/ReactToastify.css";
+import "react-toastify/dist/ReactToastify.css"
 
 const App = () => {
   return (
@@ -35,7 +35,7 @@ const App = () => {
           ...keplrWallets,
           ...cosmostationWallets,
           ...leapWallets,
-          ...vectisWallets,
+          ...vectisWallets
         ]}
         defaultNameService="stargaze"
         wcSignClientOptions={{
@@ -46,8 +46,8 @@ const App = () => {
             description: "Junø Apes - Web App at https://japes.club",
             icons: ["/assets/logo_transparent.png"],
             url: "https://japes.club",
-            name: "Junø Apes - Web App",
-          },
+            name: "Junø Apes - Web App"
+          }
         }}
         signerOptions={{
           signingStargate: (chain: Chain) => {
@@ -57,12 +57,12 @@ const App = () => {
                   gasPrice: new GasPrice(
                     Decimal.fromUserInput("25000", 2),
                     "ujuno"
-                  ),
-                };
+                  )
+                }
               default:
-                return undefined;
+                return undefined
             }
-          },
+          }
         }}
       >
         <Router>
@@ -76,7 +76,7 @@ const App = () => {
         </Router>
       </ChainProvider>
     </ChakraProvider>
-  );
-};
+  )
+}
 
-export default App;
+export default App

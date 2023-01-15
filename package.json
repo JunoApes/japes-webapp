@@ -1,6 +1,6 @@
 {
   "name": "japes-webapp",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "private": false,
   "author": "Marius Modlich <marius@digitalkitchen.zone>",
   "license": "MIT",
@@ -26,8 +26,8 @@
     "up": "yarn upgrade-interactive",
     "up-latest": "yarn up --latest",
     "release": "standard-version",
+    "prepare": "yarn husky install",
     "push-release": "git push --follow-tags origin main",
-    "prepare": "husky install",
     "theme": "chakra-cli tokens src/lib/styles/theme/index.ts",
     "theme:watch": "chakra-cli tokens src/lib/styles/theme/index.ts --watch"
   },
@@ -58,13 +58,12 @@
     "react-qrcode-logo": "^2.8.0",
     "react-router-dom": "^6.6.2",
     "react-simple-typewriter": "^5.0.1",
-    "react-toastify": "^9.1.1",
-    "yarn": "^1.22.19"
+    "react-toastify": "^9.1.1"
   },
   "devDependencies": {
     "@chakra-ui/cli": "^2.3.0",
-    "@commitlint/cli": "17.2.0",
-    "@commitlint/config-conventional": "17.2.0",
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
     "@esbuild-plugins/node-globals-polyfill": "^0.1.1",
     "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
     "@rollup/plugin-alias": "3.1.9",
@@ -76,18 +75,21 @@
     "@types/react-helmet": "^6.1.6",
     "@typescript-eslint/eslint-plugin": "5.48.0",
     "@typescript-eslint/parser": "5.48.0",
-    "@vitejs/plugin-react": "^3.0.1",
+    "@vitejs/plugin-react": "^2.2.0",
     "babel-polyfill": "6.26.0",
     "browserify-fs": "^1.0.0",
     "browserify-zlib": "^0.2.0",
     "buffer": "^6.0.3",
+    "commitizen": "^4.2.6",
     "cosmjs-types": "^0.5.2",
     "crypto-browserify": "^3.12.0",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "^8.7.0",
     "eslint-config-canonical": "^37.0.4",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-canonical": "^3.1.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "git-cz": "^4.9.0",
     "https-browserify": "^1.0.0",
     "husky": "8.0.2",
     "lint-staged": "13.0.3",
@@ -107,6 +109,12 @@
     "vite": "^3.2.5",
     "vite-plugin-checker": "^0.5.3",
     "vite-plugin-html": "^3.2.0",
-    "vite-tsconfig-paths": "^4.0.3"
+    "vite-tsconfig-paths": "^3.6.0",
+    "yarn": "^1.22.19"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
