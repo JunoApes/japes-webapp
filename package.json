@@ -67,6 +67,7 @@
     "@commitlint/config-conventional": "^17.4.2",
     "@esbuild-plugins/node-globals-polyfill": "^0.1.1",
     "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
+    "@release-it/conventional-changelog": "^5.1.1",
     "@rollup/plugin-alias": "3.1.9",
     "@semantic-release/changelog": "6.0.1",
     "@semantic-release/git": "10.0.1",
@@ -123,6 +124,48 @@
     },
     "npm": {
       "publish": false
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "infile": "CHANGELOG.md",
+        "preset": {
+          "name": "conventionalcommits",
+          "types": [
+            {
+              "type": "feat",
+              "section": "Features"
+            },
+            {
+              "type": "fix",
+              "section": "Bug Fixes"
+            },
+            {
+              "type": "refactor",
+              "section": "Refactor"
+            },
+            {
+              "type": "perf",
+              "section": "Performance"
+            },
+            {
+              "type": "style",
+              "section": "Visuals"
+            },
+            {
+              "type": "docs",
+              "section": "Docs"
+            },
+            {
+              "type": "chore",
+              "section": "Chore"
+            },
+            {
+              "type": "test",
+              "section": "Tests"
+            }
+          ]
+        }
+      }
     }
   }
 }
