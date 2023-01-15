@@ -25,7 +25,7 @@
     "format": "prettier --write src",
     "up": "yarn upgrade-interactive",
     "up-latest": "yarn up --latest",
-    "release": "HUSKY_SKIP_HOOKS=1 release-it",
+    "release": "HUSKY=0 release-it",
     "prepare": "yarn husky install",
     "push-release": "git push --follow-tags origin main",
     "theme": "chakra-cli tokens src/lib/styles/theme/index.ts",
