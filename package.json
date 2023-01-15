@@ -27,7 +27,6 @@
     "up-latest": "yarn up --latest",
     "release": "HUSKY=0 release-it",
     "prepare": "yarn husky install",
-    "push-release": "git push --follow-tags origin main",
     "theme": "chakra-cli tokens src/lib/styles/theme/index.ts",
     "theme:watch": "chakra-cli tokens src/lib/styles/theme/index.ts --watch"
   },
@@ -58,8 +57,7 @@
     "react-qrcode-logo": "^2.8.0",
     "react-router-dom": "^6.6.2",
     "react-simple-typewriter": "^5.0.1",
-    "react-toastify": "^9.1.1",
-    "release-it": "^15.6.0"
+    "react-toastify": "^9.1.1"
   },
   "devDependencies": {
     "@chakra-ui/cli": "^2.3.0",
@@ -111,7 +109,8 @@
     "vite-plugin-checker": "^0.5.3",
     "vite-plugin-html": "^3.2.0",
     "vite-tsconfig-paths": "^3.6.0",
-    "yarn": "^1.22.19"
+    "yarn": "^1.22.19",
+    "release-it": "^15.6.0"
   },
   "config": {
     "commitizen": {
