@@ -11,7 +11,7 @@ import {
   Center,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { MotionFlex } from "lib/layout/MenuToggle";
+import { MotionFlex } from "lib/components/MenuToggle";
 import { useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
 

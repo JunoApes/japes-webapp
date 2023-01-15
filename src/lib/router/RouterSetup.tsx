@@ -1,21 +1,11 @@
-/**
- * @note
- * for hook alternative of route element composition:
- * - https://reactrouter.com/docs/en/v6/upgrading/v5#use-useroutes-instead-of-react-router-config
- * - https://reactrouter.com/docs/en/v6/examples/route-objects
- *
- * might need to take notes on:
- * - https://reactrouter.com/docs/en/v6/upgrading/v5#note-on-link-to-values
- */
-
 import { Routes, Route } from "react-router-dom";
 
-import RequireAuth from "lib/components/auth/RequireAuth";
+import RequireAuth from "lib/components/auth/RequireNFT";
 import Page404 from "lib/pages/404";
 
 import { routes, privateRoutes } from "./routes";
 
-const Routings = () => {
+const RouterSetup = () => {
   return (
     <Routes>
       {routes.map((routeProps) => (
@@ -39,4 +29,4 @@ const Routings = () => {
   );
 };
 
-export default Routings;
+export default RouterSetup;

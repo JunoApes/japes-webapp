@@ -24,8 +24,8 @@ import { BsStars } from "react-icons/bs";
 import { HiNewspaper } from "react-icons/hi";
 import { HiServerStack } from "react-icons/hi2";
 import { DrawerItem } from "lib/pages/home/components/DrawerItem";
-import { SteakIcon } from "lib/pages/home/components/SteakIcon";
-import { GameIcon } from "lib/pages/home/components/GameIcon";
+import { SteakIcon } from "lib/components/assets/SteakIcon";
+import { GameIcon } from "lib/components/assets/GameIcon";
 import { motion } from "framer-motion";
 
 export const MotionFlex = motion(Flex);

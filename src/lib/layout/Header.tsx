@@ -1,8 +1,8 @@
 import { Flex, Spacer } from "@chakra-ui/react";
-import ConnectButton from "lib/pages/home/components/ConnectButton";
+import ConnectButton from "lib/components/ConnectButton";
 
-import MenuToggle from "./MenuToggle";
-import ThemeToggle from "./ThemeToggle";
+import MenuToggle from "../components/MenuToggle";
+import ThemeToggle from "../components/ThemeToggle";
 
 const Header = () => {
   return (

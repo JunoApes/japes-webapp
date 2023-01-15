@@ -13,10 +13,10 @@ import { assets, chains } from "chain-registry";
 import { MotionConfig } from "framer-motion";
 
 import Layout from "lib/layout";
-import Routings from "lib/router/Routings";
+import RouterSetup from "lib/router/RouterSetup";
 import { theme } from "lib/styles/theme";
 import { ChainProvider } from "@cosmos-kit/react";
-import { getModal } from "lib/pages/home/components/WalletModal";
+import { getModal } from "lib/components/WalletModal";
 
 import "react-toastify/dist/ReactToastify.css";
 
@@ -70,7 +70,7 @@ const App = () => {
             transition={{ type: "spring", bounce: 0.4, damping: 7 }}
           >
             <Layout>
-              <Routings />
+              <RouterSetup />
             </Layout>
           </MotionConfig>
         </Router>

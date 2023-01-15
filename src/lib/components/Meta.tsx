@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 
-const APP_NAME = "vite-react-chakra-starter";
+const APP_NAME = "Junø Apes - Web";
 
 const Meta = () => {
   return (

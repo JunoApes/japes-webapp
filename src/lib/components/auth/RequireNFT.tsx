@@ -5,10 +5,7 @@ type PrivateRouteProps = {
   redirectTo?: string;
 };
 
-const RequireAuth = ({
-  children,
-  redirectTo = "/login",
-}: PrivateRouteProps) => {
+const RequireNFT = ({ children, redirectTo = "/login" }: PrivateRouteProps) => {
   // add your own authentication logic here
   const isAuthenticated = true;
 
@@ -19,4 +16,4 @@ const RequireAuth = ({
   );
 };
 
-export default RequireAuth;
+export default RequireNFT;

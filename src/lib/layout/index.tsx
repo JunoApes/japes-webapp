@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { ToastContainer } from "react-toastify";
 
 import Header from "./Header";
-import Meta from "./Meta";
+import Meta from "../components/Meta";
 
 type LayoutProps = {
   children: ReactNode;
@@ -23,7 +23,6 @@ const Layout = ({ children }: LayoutProps) => {
       bg={layoutBgColor}
     >
       <Meta />
-
       <Flex
         direction="column"
         w="full"
