@@ -96,10 +96,10 @@ const MenuToggle = () => {
       <IconButton
         aria-label="theme toggle"
         variant="ghost"
-        rounded="xl"
+        _active={{ bg: focusBgColor }}
+        rounded="0.9em"
         bg={bgColor}
         _hover={{ bg: hoverBgColor }}
-        _focus={{ bg: focusBgColor }}
         icon={<FaHamburger />}
         onClick={() => handleClick()}
       />

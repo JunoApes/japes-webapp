@@ -132,7 +132,6 @@ const SomeText = () => {
         />
       </Center>
       <Button
-        // shadow="0.3rem 0.3rem 0 #212121"
         initial={{ y: 200, opacity: 0 }}
         animate={{
           transition: {
@@ -157,6 +156,7 @@ const SomeText = () => {
         _hover={{
           textDecor: "none"
         }}
+        _active={{ bg: "#332d2d" }}
         overflow="visible"
         pos="relative"
         fontSize={{ base: "1em", md: "1.2em" }}
@@ -164,6 +164,7 @@ const SomeText = () => {
         <Flex
           as={motion.button}
           whileHover={{ y: -10, x: -10 }}
+          whileTap={{ y: -6, x: -6 }}
           justifyContent="center"
           alignItems="center"
           pos="relative"

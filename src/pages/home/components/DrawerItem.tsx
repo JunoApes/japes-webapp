@@ -55,6 +55,8 @@ export const DrawerItem = ({
     "#332D2D"
   )
 
+  const bgColor = useColorModeValue("#ebebeb", "green.700")
+
   return (
     <Popover
       placement="left-start"
@@ -72,8 +74,16 @@ export const DrawerItem = ({
             as={Flex}
             gap={2}
             w="full"
-            bg={useColorModeValue("#ebebeb", "green.700")}
-            _hover={{ bg: useColorModeValue("white", "green.600") }}
+            bg={bgColor}
+            _disabled={{
+              bg: bgColor,
+              opacity: 0.6,
+              cursor: "not-allowed",
+              _hover: { bg: bgColor }
+            }}
+            _hover={{
+              bg: useColorModeValue("white", "green.600")
+            }}
             alignItems="center"
             cursor="pointer"
             pos="relative"

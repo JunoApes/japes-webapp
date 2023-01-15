@@ -16,7 +16,7 @@ const ThemeToggle = () => {
       rounded="0.9em"
       bg={bgColor}
       _hover={{ bg: hoverBgColor }}
-      _focus={{ bg: focusBgColor }}
+      _active={{ bg: focusBgColor }}
       icon={colorMode === "light" ? <BsFillMoonStarsFill /> : <RiSunFill />}
       onClick={() => {
         toggleColorMode()
