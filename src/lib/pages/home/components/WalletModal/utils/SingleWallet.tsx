@@ -3,6 +3,7 @@
 import { Box, Button, Center, Icon, Skeleton, Text } from "@chakra-ui/react";
 import { ChainWalletBase, ModalVersion } from "@cosmos-kit/core";
 import { IconType } from "react-icons";
+import { BiLogOut } from "react-icons/bi";
 import { GoDesktopDownload } from "react-icons/go";
 import { RiDoorOpenFill } from "react-icons/ri";
 
@@ -154,7 +155,7 @@ export const getSingleWalletView = (
         await disconnect();
         setDisplay("list");
       },
-      icon: <Icon as={RiDoorOpenFill} />,
+      icon: <Icon as={BiLogOut} />,
     },
     Connecting: {
       logoStatus: LogoStatus.Loading,

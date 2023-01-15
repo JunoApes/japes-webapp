@@ -218,7 +218,7 @@ const ConnectButton: FC<ConnectButtonProps> = () => {
                     bg="rgba(255,255,255,0.4)"
                     _hover={{ background: "rgba(255,255,255,0.5)" }}
                     _active={{ background: "rgba(255,255,255,0.3)" }}
-                    aria-label="Disconnect"
+                    aria-label="Open Wallet Modal"
                     as={motion.div}
                     icon={<BiLogOut size="1rem" />}
                     onClick={async (event) => {

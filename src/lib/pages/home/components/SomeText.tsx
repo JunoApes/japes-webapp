@@ -31,7 +31,8 @@ const SomeText = () => {
       pos="relative"
       initial={{ scale: 0.5 }}
       animate={{ scale: 1 }}
-      pt={{ base: 10, md: 32 }}
+      pt={{ base: 10, md: 18 }}
+      pb={{ base: 0, md: 8 }}
       transition={{ staggerChildren: 1, delayChildren: 1 }}
     >
       <Image
