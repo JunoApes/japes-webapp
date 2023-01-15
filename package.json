@@ -1,6 +1,6 @@
 {
   "name": "japes-webapp",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "private": false,
   "author": "Marius Modlich <marius@digitalkitchen.zone>",
   "license": "MIT",
@@ -25,7 +25,7 @@
     "format": "prettier --write src",
     "up": "yarn upgrade-interactive",
     "up-latest": "yarn up --latest",
-    "release": "standard-version",
+    "release": "release-it",
     "prepare": "yarn husky install",
     "push-release": "git push --follow-tags origin main",
     "theme": "chakra-cli tokens src/lib/styles/theme/index.ts",
@@ -58,7 +58,8 @@
     "react-qrcode-logo": "^2.8.0",
     "react-router-dom": "^6.6.2",
     "react-simple-typewriter": "^5.0.1",
-    "react-toastify": "^9.1.1"
+    "react-toastify": "^9.1.1",
+    "release-it": "^15.6.0"
   },
   "devDependencies": {
     "@chakra-ui/cli": "^2.3.0",
@@ -100,7 +101,6 @@
     "process": "^0.11.10",
     "rollup-plugin-polyfill-node": "^0.11.0",
     "semantic-release": "19.0.5",
-    "standard-version": "9.5.0",
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0",
     "tty-browserify": "^0.0.1",
@@ -115,6 +115,14 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "release-it": {
+    "github": {
+      "release": true
+    },
+    "npm": {
+      "publish": false
     }
   }
 }
