@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": false,
   "author": "Marius Modlich <marius@digitalkitchen.zone>",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/JunoApes/japes-webapp.git"

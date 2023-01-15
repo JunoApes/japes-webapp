@@ -15,8 +15,6 @@ const Meta = () => {
       <meta name="format-detection" content="telephone=no" />
       <meta name="mobile-web-app-capable" content="yes" />
       <meta name="theme-color" content="#FFFFFF" />
-
-      <link rel="shortcut icon" href="/assets/favicon.svg" />
       <link rel="manifest" href="/manifest.json" />
     </Helmet>
   );
