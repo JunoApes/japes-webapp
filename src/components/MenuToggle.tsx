@@ -28,14 +28,16 @@ import { SteakIcon } from "components/Assets/SteakIcon"
 import { GameIcon } from "components/Assets/GameIcon"
 import { motion } from "framer-motion"
 
+import { ParameterChangeProposal } from "@coolcatchain/chain/types/codegen/cosmos/params/v1beta1/params"
+
 export const MotionFlex = motion(Flex)
 
 const MenuToggle = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
-  const bgColor = useColorModeValue("orange.200", "gray.900")
-  const hoverBgColor = useColorModeValue("orange.300", "gray.700")
-  const focusBgColor = useColorModeValue("orange.400", "gray.800")
+  const bgColor = useColorModeValue("orange.200", "#332D2D")
+  const hoverBgColor = useColorModeValue("orange.300", "#484040")
+  const activeBgColor = useColorModeValue("orange.400", "#2d2828")
 
   const drawerBgColor = useColorModeValue("orange.300", "#332D2D")
   const tooltipBgColor = useColorModeValue("white", "#262121")
@@ -44,7 +46,7 @@ const MenuToggle = () => {
     "#332D2D"
   )
 
-  const textColor = useColorModeValue("#212121", "white")
+  const textColor = useColorModeValue("gray.800", "white")
 
   const handleClick = () => {
     onOpen()
@@ -55,23 +57,26 @@ const MenuToggle = () => {
       isDisabled: false,
       description: "What's apeing?",
       title: "News",
-      icon: <HiNewspaper size="2rem" />
+      icon: <HiNewspaper size="2rem" />,
+      link: "/"
     },
     {
-      isDisabled: true,
+      isDisabled: false,
       description: "Manage your $JAPE",
       title: "Steak",
       icon: <SteakIcon w="2.5rem" h="2.5rem" />,
       popoverText:
-        "Stake your $JAPES NFTs to receive $JAPE tokens. Stake $JAPE tokens for access to governance, pre-order merch and earn special rewards!"
+        "Stake your $JAPES NFTs to receive voting power in the Junø Apes DAO, pre-order merch (soon) and earn additional EXTERNAL rewards!",
+      link: "https://daodao.zone/dao/juno14zcdg8w3pyp7nfzaye7jp0tzynk8xpstqax5g9ypj2u66n4lst2strvwjs"
     },
     {
-      isDisabled: true,
+      isDisabled: false,
       description: "Voice your opinion",
       title: "Govern",
       icon: <MdHowToVote size="2rem" />,
       popoverText:
-        "Vote on Junø Apes DAO proposals. Form the future of this club together."
+        "Vote on Junø Apes DAO proposals. Form the future of this club together.",
+      link: "https://daodao.zone/dao/juno14zcdg8w3pyp7nfzaye7jp0tzynk8xpstqax5g9ypj2u66n4lst2strvwjs/proposals"
     },
     {
       isDisabled: true,
@@ -96,7 +101,7 @@ const MenuToggle = () => {
       <IconButton
         aria-label="theme toggle"
         variant="ghost"
-        _active={{ bg: focusBgColor }}
+        _active={{ bg: activeBgColor }}
         rounded="0.9em"
         bg={bgColor}
         _hover={{ bg: hoverBgColor }}
@@ -114,7 +119,6 @@ const MenuToggle = () => {
             fontFamily="heading"
             fontSize="2.25em"
             fontWeight="extrabold"
-            transition="0.5s ease-out"
           >
             Junø Apes
           </DrawerHeader>
@@ -125,13 +129,8 @@ const MenuToggle = () => {
             flexDirection="column"
             pb={4}
           >
-            <MotionFlex
-              direction="column"
-              gap={5}
-              as={motion.ul}
-              transition={{ delayChildren: 0.3, staggerChildren: 0.3 }}
-            >
-              {mockup.map((listItem) => {
+            <MotionFlex direction="column" gap={5} as={motion.ul}>
+              {mockup.map((listItem, index) => {
                 return (
                   <DrawerItem
                     key={listItem.title}
@@ -140,6 +139,7 @@ const MenuToggle = () => {
                     icon={listItem.icon}
                     isDisabled={listItem.isDisabled}
                     popoverText={listItem.popoverText}
+                    index={index}
                   />
                 )
               })}
@@ -159,6 +159,7 @@ const MenuToggle = () => {
                       sub="Check on our nodes"
                       icon={<HiServerStack size="2rem" />}
                       isDisabled
+                      index={0}
                     />
                   </Flex>
                 </PopoverTrigger>
@@ -178,6 +179,8 @@ const MenuToggle = () => {
                   </PopoverHeader>
                   <PopoverBody>
                     The Junø Apes validator will be spun up in Q1 2023.
+                    Commissions will be used to buy-back $JAPE on a regular
+                    base.
                   </PopoverBody>
                 </PopoverContent>
               </Popover>

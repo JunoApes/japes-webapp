@@ -54,7 +54,7 @@ const SomeText = () => {
         initial={{ y: 200, opacity: 0 }}
         animate={{
           transition: {
-            delay: 11.5,
+            delay: 6.5,
             type: "spring",
             bounce: 0.4,
             damping: 7
@@ -85,8 +85,8 @@ const SomeText = () => {
             pos="absolute"
             textShadow="none"
             opacity={1}
-            top={-1.5}
-            right={-9}
+            top={0.5}
+            right={-7}
             rotate="25deg"
             transform="auto"
             fontSize={{ base: "0.6em", md: "0.4em" }}
@@ -119,8 +119,8 @@ const SomeText = () => {
         transition="0.5s ease-out"
       >
         <Typewriter
-          typeSpeed={40}
-          cursorBlinking={false}
+          typeSpeed={20}
+          cursorBlinking={true}
           delaySpeed={0}
           deleteSpeed={0}
           words={[
@@ -135,10 +135,10 @@ const SomeText = () => {
         initial={{ y: 200, opacity: 0 }}
         animate={{
           transition: {
-            delay: 11.5,
+            delay: 5,
             type: "spring",
-            bounce: 0.4,
-            damping: 7
+            bounce: 0.3,
+            damping: 8
           },
           y: 0,
           opacity: 1
@@ -146,7 +146,7 @@ const SomeText = () => {
         bg={"#212121"}
         textDecoration="none"
         rounded="3xl"
-        href="https://mint.japes.club"
+        href="https://www.omniflix.market/collection/onftdenomd7ba07c7b185461f862b9014c90a9e62"
         target="_blank"
         w={{ base: "20rem", md: "25rem" }}
         h="4rem"

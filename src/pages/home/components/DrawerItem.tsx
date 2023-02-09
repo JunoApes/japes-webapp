@@ -16,10 +16,11 @@ import {
   PopoverTrigger,
   useColorModeValue
 } from "@chakra-ui/react"
+import { MotionFlex } from "components/MenuToggle"
 import { motion } from "framer-motion"
 
 // rgba(0,255,100,0.5)
-const pulse = keyframes`
+export const pulse = keyframes`
   0% {
     transform: scale(0.9);
     box-shadow: 0 0 0 0 rgba(255,0,100,0.5);
@@ -41,13 +42,15 @@ export const DrawerItem = ({
   sub,
   icon,
   isDisabled,
-  popoverText
+  popoverText,
+  index
 }: {
   title: string
   sub: string
   icon: any
   isDisabled: boolean
   popoverText?: string
+  index: number
 } & ButtonProps) => {
   const tooltipBgColor = useColorModeValue("white", "#262121")
   const tooltipBorderColor = useColorModeValue(
@@ -65,7 +68,13 @@ export const DrawerItem = ({
       arrowSize={10}
     >
       <PopoverTrigger>
-        <Flex w="full" as={motion.li} initial={{ x: -50 }} animate={{ x: 0 }}>
+        <MotionFlex
+          w="full"
+          as={motion.li}
+          initial={{ x: 75, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: index * 0.15, bounce: 0.4 }}
+        >
           <Button
             rounded="1rem"
             justifyContent="start"
@@ -114,7 +123,7 @@ export const DrawerItem = ({
               />
             )}
           </Button>
-        </Flex>
+        </MotionFlex>
       </PopoverTrigger>
       {title !== "News" && (
         <PopoverContent

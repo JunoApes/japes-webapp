@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@chakra-ui/react": "2.4.3",
+    "@coolcatchain/chain": "^0.8.1",
     "@cosmjs/cosmwasm-stargate": "^0.29.5",
     "@cosmjs/math": "^0.29.5",
     "@cosmjs/stargate": "^0.29.5",
@@ -98,6 +99,7 @@
     "path-browserify": "^1.0.1",
     "prettier": "^2.5.1",
     "process": "^0.11.10",
+    "release-it": "^15.6.0",
     "rollup-plugin-polyfill-node": "^0.11.0",
     "semantic-release": "19.0.5",
     "stream-browserify": "^3.0.0",
@@ -109,8 +111,7 @@
     "vite-plugin-checker": "^0.5.3",
     "vite-plugin-html": "^3.2.0",
     "vite-tsconfig-paths": "^3.6.0",
-    "yarn": "^1.22.19",
-    "release-it": "^15.6.0"
+    "yarn": "^1.22.19"
   },
   "config": {
     "commitizen": {
