@@ -76,7 +76,7 @@ const MenuToggle = () => {
       icon: <MdHowToVote size="2rem" />,
       popoverText:
         "Vote on Junø Apes DAO proposals. Form the future of this club together.",
-      link: "https://daodao.zone/dao/juno14zcdg8w3pyp7nfzaye7jp0tzynk8xpstqax5g9ypj2u66n4lst2strvwjs/proposals"
+      link: "https://daodao.zone/dao/juno14zcdg8w3pyp7nfzaye7jp0tzynk8xpstqax5g9ypj2u66n4lst2strvwjs#proposals"
     },
     {
       isDisabled: true,
@@ -140,12 +140,13 @@ const MenuToggle = () => {
                     isDisabled={listItem.isDisabled}
                     popoverText={listItem.popoverText}
                     index={index}
+                    link={listItem.link}
                   />
                 )
               })}
             </MotionFlex>
             <Spacer />
-            <Flex direction="column" gap={3}>
+            <Flex direction="column" gap={3} w="full">
               <Popover
                 placement="left-start"
                 trigger="hover"
@@ -153,15 +154,22 @@ const MenuToggle = () => {
                 arrowSize={10}
               >
                 <PopoverTrigger>
-                  <Flex w="full">
+                  <MotionFlex
+                    as={motion.li}
+                    w="full"
+                    initial={{ y: 200, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.8, bounce: 0.4 }}
+                  >
                     <DrawerItem
                       title="Validator"
                       sub="Check on our nodes"
                       icon={<HiServerStack size="2rem" />}
                       isDisabled
                       index={0}
+                      link={""}
                     />
-                  </Flex>
+                  </MotionFlex>
                 </PopoverTrigger>
                 <PopoverContent
                   rounded="1em"

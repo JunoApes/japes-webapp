@@ -14,7 +14,8 @@ import {
   PopoverContent,
   PopoverHeader,
   PopoverTrigger,
-  useColorModeValue
+  useColorModeValue,
+  Link
 } from "@chakra-ui/react"
 import { MotionFlex } from "components/MenuToggle"
 import { motion } from "framer-motion"
@@ -43,7 +44,8 @@ export const DrawerItem = ({
   icon,
   isDisabled,
   popoverText,
-  index
+  index,
+  link
 }: {
   title: string
   sub: string
@@ -51,6 +53,7 @@ export const DrawerItem = ({
   isDisabled: boolean
   popoverText?: string
   index: number
+  link?: string
 } & ButtonProps) => {
   const tooltipBgColor = useColorModeValue("white", "#262121")
   const tooltipBorderColor = useColorModeValue(
@@ -68,62 +71,73 @@ export const DrawerItem = ({
       arrowSize={10}
     >
       <PopoverTrigger>
-        <MotionFlex
+        <Link
+          href={link}
+          target={link !== "/" ? "_blank" : "_self"}
+          _hover={{ textDecoration: "none" }}
           w="full"
-          as={motion.li}
-          initial={{ x: 75, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ delay: index * 0.15, bounce: 0.4 }}
         >
-          <Button
-            rounded="1rem"
-            justifyContent="start"
-            px="0.5rem"
-            py="2rem"
-            as={Flex}
-            gap={2}
-            w="full"
-            bg={bgColor}
-            _disabled={{
-              bg: bgColor,
-              opacity: 0.6,
-              cursor: "not-allowed",
-              _hover: { bg: bgColor }
-            }}
-            _hover={{
-              bg: useColorModeValue("white", "green.600")
-            }}
-            alignItems="center"
-            cursor="pointer"
-            pos="relative"
-            isDisabled={isDisabled}
+          <MotionFlex
+            as={motion.li}
+            initial={{ x: 75, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: index * 0.15, bounce: 0.4 }}
           >
-            {icon}
-            <VStack align="start" justify="start" spacing={0}>
-              <Heading lineHeight={1} fontSize="2xl">
-                {title}
-              </Heading>
-              <Text fontSize="md">{sub}</Text>
-            </VStack>
-            {title === "Validator" && (
-              <Circle
-                _after={{
-                  content: "''",
-                  width: "100%",
-                  height: "100%",
-                  borderRadius: "full",
-                  bg: "inherit",
-                  animation: `${pulse} infinite 2s linear`
-                }}
-                bg="rgb(255,0,100)"
-                pos="absolute"
-                top={-2}
-                right={-2}
-                size="1.5rem"
-              />
-            )}
-          </Button>
-        </MotionFlex>
+            <Button
+              rounded="1rem"
+              justifyContent="start"
+              px="0.5rem"
+              py="2rem"
+              as={Flex}
+              gap={2}
+              w="full"
+              bg={bgColor}
+              _disabled={{
+                bg: bgColor,
+                opacity: 0.6,
+                cursor: "not-allowed",
+                _hover: { bg: bgColor }
+              }}
+              _hover={{
+                bg: useColorModeValue("white", "green.600")
+              }}
+              _active={{
+                bg: useColorModeValue("white", "green.900")
+              }}
+              alignItems="center"
+              cursor="pointer"
+              pos="relative"
+              isDisabled={isDisabled}
+            >
+              {icon}
+              <VStack align="start" justify="start" spacing={0}>
+                <Heading lineHeight={1} fontSize="2xl">
+                  {title}
+                </Heading>
+                <Text fontSize="md">{sub}</Text>
+              </VStack>
+              {(title === "Validator" ||
+                title === "Govern" ||
+                title === "Steak") && (
+                <Circle
+                  _after={{
+                    content: "''",
+                    width: "100%",
+                    height: "100%",
+                    borderRadius: "full",
+                    bg: "inherit",
+                    animation: `${pulse} infinite 2s linear`
+                  }}
+                  bg="rgb(255,0,100)"
+                  pos="absolute"
+                  top={-2}
+                  right={-2}
+                  size="1.2rem"
+                />
+              )}
+            </Button>
+          </MotionFlex>
+        </Link>
       </PopoverTrigger>
       {title !== "News" && (
         <PopoverContent
